@@ -1,9 +1,9 @@
 :root {
-  --cor-primaria: #00e0ff;       /* Azul ciano técnico */
-  --cor-secundaria: #ff9800;     /* Detalhe laranja (energia) */
-  --cor-fundo: #0a0a0a;          /* Preto industrial */
-  --cor-texto: #e0e0e0;          /* Cinza claro */
-  --cor-card: #1a1a1a;           /* Aço escuro */
+  --cor-primaria: #00e0ff;
+  --cor-secundaria: #ff9800;
+  --cor-fundo: #0a0a0a;
+  --cor-texto: #e0e0e0;
+  --cor-card: #1a1a1a;
 }
 
 * {
@@ -174,4 +174,35 @@ footer {
   100% {
     transform: rotate(360deg);
   }
+}
+
+@keyframes flutuar {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Container da foto e nome */
+.intro-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Container que aplica o recorte circular */
+.foto-redonda {
+  width: 250px;           /* tamanho do círculo */
+  height: 250px;
+  border-radius: 50%;     /* recorte circular */
+  overflow: hidden;       /* corta a imagem que ultrapassa o círculo */
+  border: 3px solid var(--cor-primaria);
+  box-shadow: 0 0 15px rgba(0, 224, 255, 0.5);
+}
+
+/* Imagem dentro do container */
+.foto-redonda img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;      /* preenche o círculo mantendo proporção */
+  display: block;
 }
