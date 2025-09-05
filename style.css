@@ -181,28 +181,75 @@ footer {
   50% { transform: translateY(-10px); }
 }
 
-/* Container da foto e nome */
-.intro-container {
+.foto-perfil {
+  width: 400px;              /* tamanho final do círculo */
+  height: 400px;             /* igual à largura */
+  border-radius: 50%;        /* círculo perfeito */
+  overflow: hidden;          /* corta o excesso */
+  border: 4px solid var(--cor-primaria);
+  box-shadow: 0 0 20px rgba(0, 224, 255, 0.3);
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 20px;
+  justify-content: center;
 }
 
-/* Container que aplica o recorte circular */
-.foto-redonda {
-  width: 250px;           /* tamanho do círculo */
-  height: 250px;
-  border-radius: 50%;     /* recorte circular */
-  overflow: hidden;       /* corta a imagem que ultrapassa o círculo */
-  border: 3px solid var(--cor-primaria);
-  box-shadow: 0 0 15px rgba(0, 224, 255, 0.5);
-}
-
-/* Imagem dentro do container */
-.foto-redonda img {
+.foto-perfil img {
   width: 100%;
   height: 100%;
-  object-fit: cover;      /* preenche o círculo mantendo proporção */
-  display: block;
+  object-fit: cover;         /* ajusta o corte sem distorcer */
+}
+
+/* ====== WHATSAPP ====== */
+.whatsapp {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.botao-whatsapp {
+  background: var(--cor-primaria);
+  color: #000;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 12px;
+  padding: 12px 25px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.botao-whatsapp:hover {
+  background: var(--cor-secundaria);
+  transform: scale(1.05);
+}
+
+.campo-form {
+  width: 100%;
+  padding: 14px 18px;
+  font-size: 1rem;
+  color: #000;
+  background: #e6faff; /* fundo claro */
+  border: 2px solid var(--cor-primaria);
+  border-radius: 12px;
+  outline: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 8px rgba(0, 224, 255, 0.2);
+}
+
+.campo-form::placeholder {
+  color: #555;
+  opacity: 0.8;
+}
+
+.campo-form:focus {
+  border-color: var(--cor-secundaria);
+  box-shadow: 0 0 12px rgba(255, 152, 0, 0.6);
+}
+
+/* Ajuste para textarea ficar mais alto e consistente */
+textarea.campo-form {
+  min-height: 120px;
+  resize: vertical;
 }
